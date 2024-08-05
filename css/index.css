@@ -183,3 +183,45 @@ section p {
         left: 10px; /* Ajusta el valor según sea necesario */
     
 }
+
+
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 50px;
+    }
+
+    .menu li a {
+        font-size: 20px;
+    }
+
+    .close-button {
+        font-size: 20px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .menu li::after {
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu li a {
+        font-size: 18px;
+    }
+
+    .icono {
+        font-size: 16px;
+    }
+
+    .close-button {
+        font-size: 18px;
+    }
+
+    .menu li::after {
+        width: 90%;
+    }
+}
