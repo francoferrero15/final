@@ -5,17 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Vertical</title>
     <style>
-        body {
-            background-image: url('./fotos/alga.jpg');
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-weight: bold;
-        }
+     body {
+    position: relative;
+    background-image: url('./fotos/fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-weight: bold;
+    z-index: 1;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(66, 65, 65, 0.7); /* Gris con 50% de opacidad */
+    z-index: -1; /* Asegura que el overlay esté detrás del contenido */
+}
         .menu {
             list-style-type: none;
             padding: 0;
