@@ -1,12 +1,12 @@
 
 header {
-    background-color: #ffffff;
+    background-image: #ffffff;
     padding: 10px 0;
     font-family: 'Times New Roman', Times, serif;
 
 }
 main{
-    background-color: #fff7ed;
+    background-color: #f7f7f7;
 }
 
 .nav-menu {
@@ -23,7 +23,7 @@ main{
 }
 
 .nav-menu a {
-    color: #8B572A; /* Color del texto del menú */
+    color: #000000; /* Color del texto del menú */
     text-decoration: none;
     font-size: 20px;
     padding: 10px 10px; /* Espaciado interno de los enlaces */
@@ -38,10 +38,10 @@ main{
 }
 
 .hero {
-    background-image: url('/fotos/sashimi.png'); /* Reemplaza con la ruta a tu imagen */
+    background-image: url('../fotos/fondo.png'); /* Reemplaza con la ruta a tu imagen */
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,35 +51,82 @@ main{
 }
 
 
-
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-image: url('/fotos/alga.jpg'); /* Reemplaza con la ruta a tu imagen */
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
+    background-attachment: fixed; /* La imagen se queda fija mientras scrolleas */
+    background-position: center; /* Centrar la imagen */
+}
 .hero-content {
     position: relative;
     z-index: 2;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin: 0;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 6rem; /* Tamaño de fuente grande */
+    letter-spacing: 0.2rem; /* Espaciado entre letras */
+    font-weight: 200;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+
 }
 
 .hero p {
-    font-size: 24px;
-    margin: 10px 0 0;
-    letter-spacing: 1px;
-    font-weight: 400;
+    font-size: 30px; /* Tamaño de fuente grande */
+    letter-spacing: 0.2rem; /* Espaciado entre letras */
+    font-weight: 200;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+
+}
+.logo-container {
+    position: absolute;
+    top: 20px; /* Distancia desde la parte superior */
+    right: 20px; /* Distancia desde la parte derecha */
+    width: 100px;  /* Tamaño del logo */
+    height: 100px;  /* Tamaño del logo */
+    border-radius: 50%;  /* Hace que el contenedor tenga forma circular */
+    overflow: hidden;  /* Asegura que la imagen se ajuste dentro del círculo */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto elegante */
+}
+
+.logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Asegura que la imagen cubra todo el contenedor sin distorsionarse */
+    border-radius: 50%;  /* Asegura que la imagen también sea circular */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Posicionar a la derecha */
+    margin: 20px; /* Un pequeño margen alrededor del contenedor */
+}
+
+/* Estilo del botón */
+.button {
+    padding: 20px 30px;  /* Tamaño más pequeño del botón */
+    background-color: black; /* Fondo negro */
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Quitar subrayado del enlace */
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+    border: 2px solid black; /* Borde negro */
+    transition: all 0.3s ease; /* Transición suave para los cambios */
+    letter-spacing: 0.2rem; /* Espaciado entre letras */
+    font-weight: 200;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+/* Efecto hover (al pasar el ratón sobre el botón) */
+.button:hover {
+    background-color: white;
+    color: black; /* Cambiar el color del texto al pasar el ratón */
+    border: 2px solid black; /* Borde negro */
 }
 
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Times New Roman', Times, serif, sans-serif;
-    background-image: url(''); /* Reemplaza con la ruta a tu imagen */
-    background-size: cover; /* Para que la imagen cubra todo el fondo */
-    background-attachment: fixed; /* La imagen se queda fija mientras scrolleas */
-    background-position: center; /* Centrar la imagen */
-}
 
 section {
     padding: 60px 20px;
@@ -97,6 +144,72 @@ section p {
     max-width: 600px;
 }
 
+
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 10px;
+    overflow-x: auto; /* Esto permite desplazamiento horizontal si es necesario */
+}
+
+.gallery img {
+    width: 24%; /* Cada imagen ocupará el 24% del ancho del contenedor */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Animación para ampliar imagen al pasar el ratón */
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Efecto de ampliación cuando pasas el ratón por encima */
+}
+
+
+
+/* Contenedor del slider */
+.slider {
+    width: 100%;  /* Ajusta el ancho general del slider */
+    max-width: 1400px; /* Ancho máximo del slider */
+    height: 600px; /* Altura del slider */
+    overflow: hidden;  /* Ocultar contenido desbordado */
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Contenedor de las imágenes */
+.slides {
+    display: flex;
+    width: calc(100% * 8);  /* Aumentamos el ancho del contenedor para incluir las imágenes duplicadas */
+    height: 100%;  /* Ocupa toda la altura del contenedor */
+    animation: slide 16s linear infinite; /* Deslizamiento continuo */
+}
+
+.slide {
+    width: calc(100% / 8);  /* Cada imagen ocupará el ancho calculado */
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Asegura que las imágenes cubran todo el espacio disponible */
+    border-radius: 8px;
+}
+
+/* Animación para deslizar las imágenes */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }  /* Movemos exactamente la mitad (50%) para mostrar las imágenes duplicadas */
+}
+
+
+
+
+
+
 .info {
     text-align: center;
     padding: 50px 20px;
@@ -104,7 +217,7 @@ section p {
 }
 
 .info h1 {
-    color: #8B572A;
+    color: #000000;
     font-size: 24px;
     margin-bottom: 10px;
 }
@@ -115,9 +228,17 @@ section p {
     margin-bottom: 40px;
 }
 
+.dias{
+    color: #000000;
+    font-size: 6rem; /* Tamaño de fuente grande */
+letter-spacing: 0.2rem; /* Espaciado entre letras */
+font-weight: 200;
+font-family: 'Helvetica Neue', 'Arial', sans-serif;
+font-size: xx-large;
 
+}
 .contacto {
-    color: #8B572A;
+    color: #000000;
     font-size: 18px;
     margin-bottom: 10px;
 } 
@@ -143,30 +264,40 @@ section p {
 }
 
 .info-item h3 {
-    color: #8B572A;
-    font-size: 22px;
-    margin-bottom: 10px;
+    color: #000000;
+    font-size: 6rem; /* Tamaño de fuente grande */
+letter-spacing: 0.2rem; /* Espaciado entre letras */
+font-weight: 200;
+font-family: 'Helvetica Neue', 'Arial', sans-serif;
+font-size: x-large;
+
 }
 
 .info-item p {
-    color: #111111;
-    font-size: 19px;
-    line-height: 1.5;
-    font-weight: bold;
+    color: #000000;
+letter-spacing: 0rem; /* Espaciado entre letras */
+font-weight: 400;
+font-family: 'Helvetica Neue', 'Arial', sans-serif;
+font-size: large;
+
 }
 
 .horarios{
     color: #000000;
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 10px;
-    font-weight: bold;
     letter-spacing: 2px;
-}
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
 
-.dias{
-    color: #8B572A;
-    font-size: 24px;
-    margin-bottom: 10px;
+}
+.horarios p {
+    color: #000000;
+    font-size: 6rem; /* Tamaño de fuente grande */
+letter-spacing: 0.2rem; /* Espaciado entre letras */
+font-weight: 200;
+font-family: 'Helvetica Neue', 'Arial', sans-serif;
+font-size: xx-large;
+
 }
 .info-container-2 {
     display: flex;
